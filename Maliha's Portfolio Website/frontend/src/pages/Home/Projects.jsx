@@ -14,6 +14,7 @@ export default function Projects() {
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");
+  const [showAll, setShowAll] = useState(false);
 
   const projects = [
     {
@@ -174,7 +175,9 @@ export default function Projects() {
 
   const filteredProjects =
     activeCategory === "All"
-      ? projects
+      ? showAll
+        ? projects
+        : projects.slice(0, 12)
       : projects.filter((project) => project.category === activeCategory);
 
   const masonryBreakpoints = {
@@ -184,7 +187,7 @@ export default function Projects() {
   };
 
   return (
-    <div id="projects" className="px-10 pb-10">
+    <div id="projects" className="px-10 pt-4 pb-10">
       <SectionTitle title="My Projects" color="text-black" />
 
       <div className="sticky top-20 z-50">
@@ -237,6 +240,28 @@ export default function Projects() {
           </div>
         ))}
       </Masonry>
+
+      {activeCategory === "All" && !showAll && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => setShowAll(true)}
+            className="px-6 py-2 bg-black text-white font-semibold rounded-md hover:bg-gray-400 cursor-pointer"
+          >
+            More Work
+          </button>
+        </div>
+      )}
+
+      {activeCategory === "All" && showAll && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => setShowAll(false)}
+            className="px-6 py-2 bg-gray-300 text-black font-semibold rounded-md hover:bg-gray-200 cursor-pointer"
+          >
+            Show Less
+          </button>
+        </div>
+      )}
 
       <style>
         {`

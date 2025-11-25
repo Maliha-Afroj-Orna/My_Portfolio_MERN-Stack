@@ -5,6 +5,8 @@ import About from './About.jsx';
 import Projects from './Projects.jsx';
 import Resume from './resume.jsx';
 import Banner from './Banner.jsx';
+import Contact from './Contact.jsx';
+import Footer from '../../components/Footer.jsx';
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <Banner />
       <Projects />
       <Resume />
+      <Contact />
+      <Footer />
     </div>
   )
 }

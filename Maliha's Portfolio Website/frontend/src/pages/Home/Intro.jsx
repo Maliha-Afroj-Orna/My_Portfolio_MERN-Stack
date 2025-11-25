@@ -3,7 +3,7 @@ import React from "react";
 export default function Intro() {
   return (
     <div
-      className="relative h-[89vh] bg-cover bg-center"
+      className="relative h-[89vh] bg-cover bg-center pt-4 pb-10"
       style={{ backgroundImage: "url('/images/intro.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/50 flex items-center">

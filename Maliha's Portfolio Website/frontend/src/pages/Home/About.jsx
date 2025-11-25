@@ -5,7 +5,7 @@ import Skills from "../../components/Skills";
 export default function About() {
   return (
     <>
-      <div id="about" className="mb-10">
+      <div id="about" className="mb-10 pt-4 pb-10">
         <SectionTitle title="About Me" color="text-black" />
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 bg-gray-100 mx-auto md:mx-50 p-10 rounded-md shadow-lg">

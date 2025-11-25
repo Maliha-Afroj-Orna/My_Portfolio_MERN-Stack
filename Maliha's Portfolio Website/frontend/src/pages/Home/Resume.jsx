@@ -5,19 +5,19 @@ import Work from "../../components/Work";
 
 export default function Resume() {
   return (
-    <div className="bg-gray-100 pt-4 pb-12">
+    <div id="resume" className="bg-gray-100 pt-4 pb-10">
       <SectionTitle title="Resume" color="text-black" />
 
-      <div className="flex flex-row items-start px-40 pt-4">
+      <div className="flex flex-col md:flex-row items-start md:px-40 pt-4">
         <div className="bg-white rounded-md p-2 mb-12 shadow-xl">
           <img
-            className="h-100 w-80"
+            className="h-120 w-100 hidden md:block"
             src="/images/maliha.png"
             alt="Maliha's Resume"
           />
         </div>
 
-        <div className="flex flex-col items-start justify-start ml-30">
+        <div className="flex flex-col items-start justify-start ml-6 md:ml-20">
           <div className="flex flex-col">
             <h2 className="text-[#EE6C4D] font-semibold text-3xl pb-8">
               Education
@@ -38,7 +38,7 @@ export default function Resume() {
             />
           </div>
 
-          <div className="flex flex-col items-start justify-start">
+          <div className="flex flex-col border-t border-gray-300 pt-8 items-start justify-start">
             <h2 className="text-[#EE6C4D] font-semibold text-3xl pb-8 ">
               Work Experience
             </h2>
@@ -56,10 +56,24 @@ export default function Resume() {
               institution="IEEE_Xplore,ResearchGate"
               date="Dec 2024"
             />
+
+            <Work
+              title="Web Development"
+              position="Web Developer"
+              institution="Fiverr"
+              date="June 2020 - Present"
+            />
+
+            <Work
+              title="Workshop"
+              position="Participant (Idea Submit)"
+              institution="a2i – Aspire to Innovate (Govt.)"
+              date="June 2023"
+            />
           </div>
 
           <a
-            className="text-white bg-[#EE6C4D] mx-auto border border-2 border-white rounded px-4 py-2 font-semibold hover:text-black hover:bg-white hover:border-black cursor-pointer"
+            className="text-white bg-[#EE6C4D] border border-2 border-white rounded px-4 py-1 font-semibold hover:text-black hover:bg-white hover:border-black cursor-pointer"
             href="/cv/Maliha_Afroj_Orna_CV.pdf"
             download
           >

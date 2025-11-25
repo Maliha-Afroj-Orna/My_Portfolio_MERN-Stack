@@ -23,6 +23,8 @@ export default function Skills() {
     { name: "Figma", score: "70%", img: "/images/figma.png" },
     { name: "Photoshop", score: "80%", img: "/images/photoshop.png" },
     { name: "Illustrator ", score: "75%", img: "/images/illustrator.png" },
+    { name: "C", score: "95%", img: "/images/c.png" },
+    { name: "C++", score: "90%", img: "/images/c++.png" },
     { name: "Python", score: "85%", img: "/images/python.png" },
     { name: "Machine Learning", score: "80%", img: "/images/ml.png" },
     { name: "Transformers", score: "80%", img: "/images/transformers.png" },
