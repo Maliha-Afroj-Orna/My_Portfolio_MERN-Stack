@@ -1,19 +1,34 @@
-import React from 'react'
+import React from "react";
 
 export default function Banner() {
   return (
-    <div className='bg-[#EE6C4D]'>
-        <div flex flex-row items-center justify-start py-2>
-            <div className='flex flex-col items-center justify-center'>
-                <h2>Have a project on Mind?</h2>
-                <p>I bring your ideas to life with fast, scalable web apps powered by modern AI. Let’s work together to build something smart and impactful.</p>
-            </div>
-            
-            <div>
-                <img src="/images/maliha.jpg" alt="Maliha Profile" />
-            </div>
-            
+    <div className="bg-[#EE6C4D] flex flex-col py-2">
+      <div className="flex flex-row md:px-60 px-4">
+        <div className="flex flex-col items-start justify-center md:w-2/3 w-full">
+          <h2 className=" text-2xl md:text-3xl text-white pb-4 font-semibold">
+            Have a project on your Mind?
+          </h2>
+          <p className="text-lg text-gray-200 pb-4">
+            I bring your ideas to life with fast, scalable web apps powered by
+            modern AI. Let’s work together to build something smart and
+            impactful.
+          </p>
+          <a
+            href="#contact"
+            className="relative z-20 text-[#EE6C4D] text-center border border-2 border-black bg-white rounded px-2 py-2 font-semibold hover:text-white hover:bg-black w-[150px] cursor-pointer"
+          >
+            Contact Me
+          </a>
         </div>
+
+        <div className="flex items-end justify-end md:ml-20">
+          <img
+            className="relative z-10 w-55 h-70 rounded-full mt-[-80px] hidden md:block"
+            src="/images/banner.png"
+            alt="Maliha's Banner"
+          />
+        </div>
+      </div>
     </div>
-  )
+  );
 }

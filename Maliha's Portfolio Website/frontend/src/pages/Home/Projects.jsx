@@ -184,8 +184,8 @@ export default function Projects() {
   };
 
   return (
-    <div id="projects" className="bg-gray-100 px-10 pb-10">
-      <SectionTitle title="My Projects" color="text-[#EE6C4D]" />
+    <div id="projects" className="px-10 pb-10">
+      <SectionTitle title="My Projects" color="text-black" />
 
       <div className="sticky top-20 z-50">
         <div

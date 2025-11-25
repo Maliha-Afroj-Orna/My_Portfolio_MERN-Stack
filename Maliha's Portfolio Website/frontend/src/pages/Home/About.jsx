@@ -45,13 +45,13 @@ export default function About() {
             <div className="flex flex-row gap-6 py-2">
               <a
                 href="#contact"
-                className="text-black text-center border border-2 border-black rounded px-4 py-2 font-semibold hover:text-white hover:bg-black w-[150px]"
+                className="text-black text-center border border-2 border-black rounded px-4 py-2 font-semibold hover:text-white hover:bg-black w-[150px] cursor-pointer"
               >
                 Hire Me
               </a>
               <a
                 href="#projects"
-                className="text-black text-center border border-2 border-black rounded px-4 py-2 font-semibold hover:text-white hover:bg-black w-[150px]"
+                className="text-black text-center border border-2 border-black rounded px-4 py-2 font-semibold hover:text-white hover:bg-black w-[150px] cursor-pointer"
               >
                 My Projects
               </a>
