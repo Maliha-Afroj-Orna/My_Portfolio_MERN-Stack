@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionTitle from "../../components/sectionTitle";
 import Masonry from "react-masonry-css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Projects() {
   const categories = [
@@ -186,8 +188,18 @@ export default function Projects() {
     700: 1,
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out" });
+  }, []);
+
   return (
-    <div id="projects" className="px-10 pt-4 pb-10">
+    <div
+      id="projects"
+      className="px-10 pt-4 pb-10"
+      data-aos="fade-up"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="1000"
+    >
       <SectionTitle title="My Projects" color="text-black" />
 
       <div className="sticky top-20 z-50">

@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Footer() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out" });
+  }, []);
   return (
-    <div className="bg-[#293241] pt-4">
+    <div
+      className="bg-[#293241] pt-4"
+      data-aos="fade-up"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="1000"
+    >
       <div className=" pb-4 grid grid-cols-1 md:grid-cols-8 gap-8 px-4 md:px-16">
         <div className="md:col-span-5 md:pr-16">
           <a href="#home">

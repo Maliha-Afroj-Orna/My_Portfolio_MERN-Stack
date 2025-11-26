@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionTitle from "../../components/SectionTitle";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Contact() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out" });
+  }, []);
   return (
-    <div id="contact" className="pt-4 pb-16">
+    <div
+      id="contact"
+      className="pt-4 pb-16"
+      data-aos="fade-up"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="1000"
+    >
       <SectionTitle title="Contact Me" color="text-black" />
 
       <form className="bg-white border border-gray-200 mx-auto w-2/4 p-6 rounded-md shadow-lg">

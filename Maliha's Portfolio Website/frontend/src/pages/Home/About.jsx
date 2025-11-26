@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionTitle from "../../components/sectionTitle";
 import Skills from "../../components/Skills";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out" });
+  }, []);
+
   return (
     <>
-      <div id="about" className="mb-10 pt-4 pb-10">
+      <div
+        id="about"
+        className="mb-10 pt-4 pb-10 "
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="1000"
+      >
         <SectionTitle title="About Me" color="text-black" />
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 bg-gray-100 mx-auto md:mx-50 p-10 rounded-md shadow-lg">

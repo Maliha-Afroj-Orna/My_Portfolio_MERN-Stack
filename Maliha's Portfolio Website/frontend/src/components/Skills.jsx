@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Skills() {
   const skills = [
@@ -30,8 +32,18 @@ export default function Skills() {
     { name: "Transformers", score: "80%", img: "/images/transformers.png" },
   ];
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out" });
+  }, []);
+
   return (
-    <div id="skills" className="overflow-hidden py-20">
+    <div
+      id="skills"
+      className="overflow-hidden py-20"
+      data-aos="fade-up"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="1000"
+    >
       <div className="flex flex-row items-center justify-center gap-6 animate-scroll px-4">
         {skills.map((skill, index) => (
           <div

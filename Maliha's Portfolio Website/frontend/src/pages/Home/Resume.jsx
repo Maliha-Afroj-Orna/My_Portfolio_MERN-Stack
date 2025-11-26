@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionTitle from "../../components/SectionTitle";
 import Education from "../../components/Education";
 import Work from "../../components/Work";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Resume() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out" });
+  }, []);
   return (
-    <div id="resume" className="bg-gray-100 pt-4 pb-10">
+    <div
+      id="resume"
+      className="bg-gray-100 pt-4 pb-10"
+      data-aos="fade-up"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="1000"
+    >
       <SectionTitle title="Resume" color="text-black" />
 
       <div className="flex flex-col md:flex-row items-start md:px-40 pt-4">
