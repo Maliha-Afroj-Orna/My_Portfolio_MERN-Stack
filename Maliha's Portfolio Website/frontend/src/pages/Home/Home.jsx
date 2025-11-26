@@ -7,6 +7,7 @@ import Resume from './resume.jsx';
 import Banner from './Banner.jsx';
 import Contact from './Contact.jsx';
 import Footer from '../../components/Footer.jsx';
+import UpArrow from './UpArrow.jsx';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Resume />
       <Contact />
       <Footer />
+      <UpArrow />
     </div>
   )
 }

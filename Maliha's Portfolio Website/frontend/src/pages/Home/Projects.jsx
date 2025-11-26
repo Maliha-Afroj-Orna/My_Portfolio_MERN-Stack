@@ -192,7 +192,7 @@ export default function Projects() {
 
       <div className="sticky top-20 z-50">
         <div
-          className="flex gap-4 overflow-x-auto justify-center mb-15"
+          className="flex gap-4 overflow-x-auto md:justify-center mb-15"
           style={{
             WebkitOverflowScrolling: "touch",
             touchAction: "manipulation",

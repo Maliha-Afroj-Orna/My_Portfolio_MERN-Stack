@@ -17,7 +17,7 @@ export default function Resume() {
           />
         </div>
 
-        <div className="flex flex-col items-start justify-start ml-6 md:ml-20">
+        <div className="flex flex-col items-start justify-start ml-6 md:ml-28">
           <div className="flex flex-col">
             <h2 className="text-[#EE6C4D] font-semibold text-3xl pb-8">
               Education
