@@ -8,9 +8,9 @@ export default function Intro() {
     >
       <div className="absolute inset-0 bg-black/50 flex items-center">
         <div className="px-4 md:px-40 flex flex-col items-start justify-center h-full gap-6">
-          <h1 className="text-white">HELLO! I AM MALIHA</h1>
+          <h1 className="text-white">Hi, I am</h1>
           <h1 className="text-[#EE6C4D] text-2xl md:text-4xl font-semibold">
-            I'm Maliha Afroj Orna
+            Maliha Afroj Orna
           </h1>
           <h1 className="text-white text-xl md:text-3xl font-semibold">
             A Full Stack MERN Developer and AI Engineer.
