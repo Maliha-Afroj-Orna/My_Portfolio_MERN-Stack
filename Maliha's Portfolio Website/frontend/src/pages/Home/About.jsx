@@ -3,11 +3,16 @@ import SectionTitle from "../../components/sectionTitle";
 import Skills from "../../components/Skills";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useSelector } from "react-redux";
 
 export default function About() {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out" });
   }, []);
+
+  const { loading, portfolioData } = useSelector((state) => state.root);
+  const { about } = portfolioData;
+  const { profileImg, desc, name, DOB, address, email, skills } = about;
 
   return (
     <>
@@ -24,34 +29,28 @@ export default function About() {
           <div className="w-full md:w-1/3 flex justify-center md:justify-start">
             <img
               className="h-60 w-40 md:h-100 md:w-80 rounded-full"
-              src="/images/maliha.png"
+              src={profileImg}
               alt="Maliha Profile"
             />
           </div>
 
           <div className=" flex flex-col gap-4 w-full md:w-2/3">
-            <h2 className="text-lg text-gray-500">
-              I’m a MERN Stack Developer and AI Engineer who loves transforming
-              ideas into interactive, intelligent products. Technology excites
-              me, and I enjoy blending web development with AI to solve
-              meaningful problems. Every project is a chance to learn, innovate,
-              and create something smarter than before.
-            </h2>
+            <h2 className="text-lg text-gray-500">{desc || ""}</h2>
             <p className="md:flex md:gap-8 text-lg text-[#EE6C4D] font-semibold">
-              <span className="font-bold text-xl text-black">Name:</span> Maliha
-              Afroj Orna
+              <span className="font-bold text-xl text-black">Name:</span>{" "}
+              {name || ""}
             </p>
             <p className="md:flex md:gap-11 text-lg text-[#EE6C4D] font-semibold">
               <span className="font-bold text-xl text-black">DOB:</span>{" "}
-              September 20, 2000
+              {DOB || ""}
             </p>
             <p className="md:flex md:gap-2 text-lg text-[#EE6C4D] font-semibold">
               <span className="font-bold text-xl text-black">Address:</span>{" "}
-              Dhaka, Bangladesh
+              {address || ""}
             </p>
             <p className="md:flex md:gap-8 text-lg text-[#EE6C4D] font-semibold">
               <span className="font-bold text-xl text-black">Email:</span>{" "}
-              malihaafrozorna@gmail.com
+              {email || ""}
             </p>
 
             <div className="flex flex-row gap-6 py-2">
@@ -72,7 +71,7 @@ export default function About() {
         </div>
       </div>
 
-      <Skills />
+      <Skills skills={skills} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Work({ title, position, institution, date }) {
+export default function Work({ work }) {
   return (
     <div>
       <div className="flex flex-row pb-6 mb-4">
@@ -11,13 +11,13 @@ export default function Work({ title, position, institution, date }) {
               src="/images/work.png"
               alt="Education"
             />
-            <h2 className="text-lg font-semibold">{title}</h2>
+            <h2 className="text-lg font-semibold">{work.title}</h2>
           </div>
           <p className="pl-10 text-base font-semibold text-gray-500">
-            {position}
+            {work.position}
           </p>
-          <p className="pl-10 text-gray-400">{institution}</p>
-          <h2 className="text-gray-400 ml-10">{date}</h2>
+          <p className="pl-10 text-gray-400">{work.institution}</p>
+          <h2 className="text-gray-400 ml-10">{work.date}</h2>
         </div>
       </div>
     </div>

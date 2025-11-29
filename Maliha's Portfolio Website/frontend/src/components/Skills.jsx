@@ -2,36 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function Skills() {
-  const skills = [
-    { name: "React.js", score: "80%", img: "/images/react.png" },
-    { name: "Node.js", score: "80%", img: "/images/node.png" },
-    { name: "MongoDB", score: "85%", img: "/images/mongodb.png" },
-    { name: "HTML", score: "98%", img: "/images/html.png" },
-    { name: "CSS", score: "95%", img: "/images/css.png" },
-    { name: "Sass", score: "90%", img: "/images/sass.png" },
-    { name: "Bootstrap", score: "95%", img: "/images/bootstrap.png" },
-    { name: "Tailwind Css", score: "90%", img: "/images/tailwind.png" },
-    { name: "JavaScript", score: "95%", img: "/images/js.png" },
-    { name: "JQuery", score: "90%", img: "/images/jquery.png" },
-    { name: "Wordpress", score: "97%", img: "/images/wordpress.png" },
-    { name: "Next.js", score: "80%", img: "/images/next.png" },
-    { name: "ES6", score: "95%", img: "/images/js.png" },
-    { name: "DaisyUi", score: "80%", img: "/images/daisyui.png" },
-    { name: "Express.js", score: "82%", img: "/images/express.png" },
-    { name: "REST API", score: "80%", img: "/images/restapi.png" },
-    { name: "MySQL", score: "90%", img: "/images/mysql.png" },
-    { name: "SQLite", score: "75%", img: "/images/sqlite.png" },
-    { name: "Figma", score: "70%", img: "/images/figma.png" },
-    { name: "Photoshop", score: "80%", img: "/images/photoshop.png" },
-    { name: "Illustrator ", score: "75%", img: "/images/illustrator.png" },
-    { name: "C", score: "95%", img: "/images/c.png" },
-    { name: "C++", score: "90%", img: "/images/c++.png" },
-    { name: "Python", score: "85%", img: "/images/python.png" },
-    { name: "Machine Learning", score: "80%", img: "/images/ml.png" },
-    { name: "Transformers", score: "80%", img: "/images/transformers.png" },
-  ];
-
+export default function Skills({ skills }) {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out" });
   }, []);

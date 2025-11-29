@@ -1,4 +1,4 @@
-const intro = [
+const intros = [
   {
     welcomeText: "Hi, I am",
     name: "Maliha Afroj Orna",
@@ -7,7 +7,7 @@ const intro = [
   },
 ];
 
-const about = [
+const abouts = [
   {
     profileImg: "/images/maliha.png",
     desc: "I’m a MERN Stack Developer and AI Engineer who loves transforming ideas into interactive, intelligent products. Technology excites me, and I enjoy blending web development with AI to solve meaningful problems. Every project is a chance to learn, innovate, and create something smarter than before.",
@@ -46,7 +46,7 @@ const about = [
   },
 ];
 
-const banner = [
+const banners = [
   {
     bannerTitle: "Have a project on your Mind?",
     bannerDesc:
@@ -55,7 +55,7 @@ const banner = [
   },
 ];
 
-const project = [
+const projects = [
   {
     categories: [
       "All",
@@ -203,7 +203,7 @@ const project = [
   },
 ];
 
-const resume = [
+const resumes = [
   {
     profileImg: "/images/maliha.png",
     eduDesc: [

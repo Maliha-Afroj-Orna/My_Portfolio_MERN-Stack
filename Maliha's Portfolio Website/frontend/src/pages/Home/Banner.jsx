@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useSelector } from "react-redux";
 
 export default function Banner() {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out" });
   }, []);
+
+  const { loading, portfolioData } = useSelector((state) => state.root);
+  const { banner } = portfolioData;
+  const { bannerTitle, bannerDesc, bannerImg } = banner;
+
   return (
     <div
       className="bg-[#EE6C4D] flex flex-col py-2 pt-4 pb-10"
@@ -16,12 +22,10 @@ export default function Banner() {
       <div className="flex flex-row md:px-60 px-4">
         <div className="flex flex-col items-start justify-center md:w-2/3 w-full">
           <h2 className=" text-2xl md:text-3xl text-white pb-4 font-semibold">
-            Have a project on your Mind?
+            {bannerTitle || ""}
           </h2>
           <p className="text-lg text-gray-200 pb-4">
-            I bring your ideas to life with fast, scalable web apps powered by
-            modern AI. Let’s work together to build something smart and
-            impactful.
+            {bannerDesc || ""}
           </p>
           <a
             href="#contact"
@@ -34,7 +38,7 @@ export default function Banner() {
         <div className="flex items-end justify-end md:ml-20">
           <img
             className="relative z-10 w-55 h-70 rounded-full mt-[-80px] hidden md:block"
-            src="/images/banner.png"
+            src={bannerImg}
             alt="Maliha's Banner"
           />
         </div>

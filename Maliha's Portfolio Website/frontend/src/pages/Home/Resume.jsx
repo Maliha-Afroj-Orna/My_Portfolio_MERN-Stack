@@ -4,11 +4,17 @@ import Education from "../../components/Education";
 import Work from "../../components/Work";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useSelector } from "react-redux";
 
 export default function Resume() {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out" });
   }, []);
+
+  const { loading, portfolioData } = useSelector((state) => state.root);
+  const resumeData = portfolioData?.resume || {};
+  const { profileImg, eduDesc = [], workDesc = [] } = resumeData;
+
   return (
     <div
       id="resume"
@@ -23,7 +29,7 @@ export default function Resume() {
         <div className="bg-white rounded-md p-2 mb-12 shadow-xl">
           <img
             className="h-120 w-100 hidden md:block"
-            src="/images/maliha.png"
+            src={profileImg}
             alt="Maliha's Resume"
           />
         </div>
@@ -34,19 +40,9 @@ export default function Resume() {
               Education
             </h2>
 
-            <Education
-              title="B.Sc in Computer Science and Engineering"
-              cgpa="CGPA - 3.678"
-              dean="Dean’s Merit List"
-              versity="Patuakhali Science & Technology University"
-              date="Jan 2019 - Feb 2025"
-            />
-
-            <Education
-              title="M.Sc in Computer Science and Information Technology"
-              versity="Patuakhali Science & Technology University"
-              date="July 2025 - Present"
-            />
+            {eduDesc.map((edu, index) => (
+              <Education key={index} edu={edu} />
+            ))}
           </div>
 
           <div className="flex flex-col border-t border-gray-300 pt-8 items-start justify-start">
@@ -54,33 +50,9 @@ export default function Resume() {
               Work Experience
             </h2>
 
-            <Work
-              title="Internship"
-              position="Intern Developer"
-              institution="Itransition Group (Software development company)"
-              date="Sep 2025 - Nov 2025"
-            />
-
-            <Work
-              title="OCR Generated Text Summarization using BART"
-              position="First Author"
-              institution="IEEE_Xplore,ResearchGate"
-              date="Dec 2024"
-            />
-
-            <Work
-              title="Web Development"
-              position="Web Developer"
-              institution="Fiverr"
-              date="June 2020 - Present"
-            />
-
-            <Work
-              title="Workshop"
-              position="Participant (Idea Submit)"
-              institution="a2i – Aspire to Innovate (Govt.)"
-              date="June 2023"
-            />
+            {workDesc.map((work, index) => (
+              <Work key={index} work={work} />
+            ))}
           </div>
 
           <a

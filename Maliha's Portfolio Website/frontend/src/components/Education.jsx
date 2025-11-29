@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Education({ title, cgpa, dean, versity, date }) {
+export default function Education({ edu }) {
   return (
     <div>
       <div className="flex flex-row pb-6 mb-4">
@@ -11,12 +11,16 @@ export default function Education({ title, cgpa, dean, versity, date }) {
               src="/images/education.png"
               alt="Education"
             />
-            <h2 className="text-lg font-semibold">{title}</h2>
+            <h2 className="text-lg font-semibold">{edu.title}</h2>
           </div>
-          <p className="pl-10 text-base font-semibold text-gray-500">{cgpa}</p>
-          <p className="pl-10 text-base font-semibold text-gray-500">{dean}</p>
-          <p className="pl-10 text-base text-gray-400">{versity}</p>
-          <h2 className="pl-10 text-base text-gray-400">{date}</h2>
+          <p className="pl-10 text-base font-semibold text-gray-500">
+            {edu.cgpa}
+          </p>
+          <p className="pl-10 text-base font-semibold text-gray-500">
+            {edu.dean}
+          </p>
+          <p className="pl-10 text-base text-gray-400">{edu.versity}</p>
+          <h2 className="pl-10 text-base text-gray-400">{edu.date}</h2>
         </div>
       </div>
     </div>
