@@ -43,7 +43,7 @@ export default function Contact() {
           ></textarea>
 
           <button
-            className="text-black mx-auto border border-black text-lg font-semibold cursor-pointer w-[120px] px-2 py-1 rounded-md hover:bg-[#EE6C4D] hover:text-white"
+            className="!text-white bg-[#EE6C4D] text-center !mx-auto text-lg font-semibold cursor-pointer w-[120px] px-2 py-2 rounded-md hover:bg-black hover:text-white"
             type="submit"
           >
             Submit

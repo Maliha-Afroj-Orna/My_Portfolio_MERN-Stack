@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -14,3 +14,72 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Input Intro */
+#adminIntro Input {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+#adminIntro Input:focus {
+  outline: none;
+  border: 2px solid gray;
+}
+
+/* Input About */
+#adminAbout Input {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+#adminAbout Input:focus {
+  outline: none;
+  border: 2px solid gray;
+}
+
+/* Input Banner */
+#adminBanner Input {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+#adminBanner Input:focus {
+  outline: none;
+  border: 2px solid gray;
+}
+
+/* Input Project */
+#adminProject Input {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+#adminProject Input:focus {
+  outline: none;
+  border: 2px solid gray;
+}
+
+/* Input Resume */
+#adminResume Input {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+#adminResume Input:focus {
+  outline: none;
+  border: 2px solid gray;
+}

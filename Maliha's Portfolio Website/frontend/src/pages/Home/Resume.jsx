@@ -56,7 +56,7 @@ export default function Resume() {
           </div>
 
           <a
-            className="text-white bg-[#EE6C4D] border border-2 border-white rounded px-4 py-1 font-semibold hover:text-black hover:bg-white hover:border-black cursor-pointer"
+            className="text-white bg-[#EE6C4D] border border-2 border-white rounded px-4 py-2 font-semibold hover:text-black hover:bg-white hover:border-black cursor-pointer"
             href="/cv/Maliha_Afroj_Orna_CV.pdf"
             download
           >

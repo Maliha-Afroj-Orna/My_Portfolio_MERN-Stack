@@ -3,7 +3,7 @@ import React from "react";
 export default function Work({ work }) {
   return (
     <div>
-      <div className="flex flex-row pb-6 mb-4">
+      <div className="flex flex-row pb-4 mb-4">
         <div className="flex flex-col items-start justify-start">
           <div className="flex flex-row items-center justify-center">
             <img
@@ -16,7 +16,7 @@ export default function Work({ work }) {
           <p className="pl-10 text-base font-semibold text-gray-500">
             {work.position}
           </p>
-          <p className="pl-10 text-gray-400">{work.institution}</p>
+          <p className="pl-10 text-gray-400">{work.company}</p>
           <h2 className="text-gray-400 ml-10">{work.date}</h2>
         </div>
       </div>

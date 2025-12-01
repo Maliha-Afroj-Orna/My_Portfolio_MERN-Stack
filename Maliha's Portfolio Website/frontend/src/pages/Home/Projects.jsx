@@ -6,10 +6,22 @@ import "aos/dist/aos.css";
 import { useSelector } from "react-redux";
 
 export default function Projects() {
-  const { loading, portfolioData } = useSelector((state) => state.root);
+  const { portfolioData } = useSelector((state) => state.root);
+
   const projectData = portfolioData?.project || {};
-  const categories = projectData.categories || [];
+  const rawCategories = projectData.categories || [];
   const projects = projectData.projects || [];
+
+  const categories = [
+    "All",
+    ...Array.from(
+      new Set(
+        rawCategories
+          .map((c) => (typeof c === "string" ? c.trim() : ""))
+          .filter(Boolean)
+      )
+    ),
+  ];
 
   const [activeCategory, setActiveCategory] = useState("All");
   const [showAll, setShowAll] = useState(false);
@@ -19,7 +31,12 @@ export default function Projects() {
       ? showAll
         ? projects
         : projects.slice(0, 12)
-      : projects.filter((project) => project.category === activeCategory);
+      : projects.filter(
+          (project) =>
+            project.category &&
+            project.category.trim().toLowerCase() ===
+              activeCategory.trim().toLowerCase()
+        );
 
   const masonryBreakpoints = {
     default: 3,
@@ -96,7 +113,7 @@ export default function Projects() {
         <div className="flex justify-center mt-6">
           <button
             onClick={() => setShowAll(true)}
-            className="px-6 py-2 bg-black text-white font-semibold rounded-md hover:bg-gray-400 cursor-pointer"
+            className="px-6 py-2 bg-[#EE6C4D] !text-white font-semibold rounded-md hover:bg-black hover:text-white cursor-pointer"
           >
             More Work
           </button>
