@@ -5,6 +5,7 @@ import {
   Project,
   Resume,
 } from "../models/portfolioModel.js";
+import User from "../models/userModel.js";
 
 // get all portfolio data
 export const getPortfolio = async (req, res) => {
@@ -31,93 +32,119 @@ export const getPortfolio = async (req, res) => {
 export const updateIntro = async (req, res) => {
   try {
     const intro = await Intro.findByIdAndUpdate(
-      {_id: req.body._id},
+      { _id: req.body._id },
       req.body,
-      {new: true}
+      { new: true }
     );
 
     res.status(200).send({
       data: intro,
       success: true,
-      message: "Intro updated successfully"
-  });
+      message: "Intro updated successfully",
+    });
   } catch (error) {
     res.status(500).send(error);
   }
-}
+};
 
 // update about
 export const updateAbout = async (req, res) => {
   try {
     const about = await About.findByIdAndUpdate(
-      {_id: req.body._id},
+      { _id: req.body._id },
       req.body,
-      {new: true}
+      { new: true }
     );
 
     res.status(200).send({
       data: about,
       success: true,
-      message: "About updated successfully"
-  });
+      message: "About updated successfully",
+    });
   } catch (error) {
     res.status(500).send(error);
   }
-}
+};
 
 // update banner
 export const updateBanner = async (req, res) => {
   try {
     const banner = await Banner.findByIdAndUpdate(
-      {_id: req.body._id},
+      { _id: req.body._id },
       req.body,
-      {new: true}
-    )
+      { new: true }
+    );
 
     res.status(200).send({
       data: banner,
       success: true,
-      message: "Banner updated successfully"
-    })
+      message: "Banner updated successfully",
+    });
   } catch (error) {
     res.status(500).send(error);
   }
-}
+};
 
 // update projects
 export const updateProject = async (req, res) => {
   try {
     const project = await Project.findByIdAndUpdate(
-      {_id: req.body._id},
+      { _id: req.body._id },
       req.body,
-      {new: true}
-    )
+      { new: true }
+    );
 
     res.status(200).send({
       data: project,
       success: true,
-      message: "Project updated successfully"
-    })
+      message: "Project updated successfully",
+    });
   } catch (error) {
     res.status(500).send(error);
   }
-}
+};
 
 // update resume
 export const updateResume = async (req, res) => {
   try {
     const resume = await Resume.findByIdAndUpdate(
-      {_id: req.body._id},
+      { _id: req.body._id },
       req.body,
-      {new: true}
-    )
+      { new: true }
+    );
 
     res.status(200).send({
       data: resume,
       success: true,
-      message: "Resume updated successfully"
-    })
+      message: "Resume updated successfully",
+    });
   } catch (error) {
     res.status(500).send(error);
   }
-}
+};
+
+// admin login
+export const adminLogin = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    user.password = '';
+    if (user) {
+      res.status(200).send({
+        data: user,
+        success: true,
+        message: "Admin logged in successfully",
+      });
+    } else {
+      res.status(200).send({
+        data: user,
+        success: false,
+        message: "Invalid username or password",
+      });
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};

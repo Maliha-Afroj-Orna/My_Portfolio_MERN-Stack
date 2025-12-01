@@ -10,6 +10,7 @@ import {
   HideLoading,
 } from "./redux/rootSlice.js";
 import Admin from "./pages/Admin/index.jsx";
+import Login from "./pages/Admin/Login.jsx";
 
 function App() {
   const { loading, portfolioData } = useSelector((state) => state.root);
@@ -68,6 +69,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin-login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

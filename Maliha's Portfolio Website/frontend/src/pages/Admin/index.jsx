@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header.jsx";
 import { Tabs } from "antd";
 import AdminIntro from "./AdminIntro.jsx";
@@ -38,11 +38,32 @@ const items = [
 
 export default function Admin() {
   const { portfolioData } = useSelector((state) => state.root);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/admin-login";
+    }
+  });
+
   return (
     <div>
       <Header />
+      <div className="flex flex-row justify-between">
+        <h1 className="text-2xl px-10 py-4 text-black font-semibold cursor-pointer">
+          Portfolio Admin
+        </h1>
+        <h1
+          className="underline font-semibold text-lg cursor-pointer px-12 py-4 hover:text-blue-700"
+          onClick={() => {
+            localStorage.removeItem("token");
+            window.location.href = "/admin-login";
+          }}
+        >
+          Logout
+        </h1>
+      </div>
       {portfolioData && (
-        <div className="mt-5 p-10">
+        <div className="mt-2 px-10 pb-4">
           <Tabs defaultActiveKey="1" items={items} />
         </div>
       )}
